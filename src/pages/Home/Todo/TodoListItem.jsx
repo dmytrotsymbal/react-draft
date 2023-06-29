@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { deleteTodo, toggleTodoComplet } from "redux/todoSlice"
 const TodoListItem = ({
     id,
-    text,
+    title,
     completed,
 }) => {
 
@@ -16,7 +16,7 @@ const TodoListItem = ({
                 checked={completed}
                 onChange={() => dispatch(toggleTodoComplet({ id }))}
             />
-            <span>{text}</span>
+            <span>{title}</span>
             <button onClick={() => dispatch(deleteTodo({id}))} className="deleteBtn">
                 &times;
             </button>
