@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { deleteTodo, toggleTodoComplet } from "redux/todoSlice"
+import { deleteAsyncTodo, toggleTodoComplet } from "redux/todoSlice"
 const TodoListItem = ({
     id,
     title,
@@ -17,7 +17,7 @@ const TodoListItem = ({
                 onChange={() => dispatch(toggleTodoComplet({ id }))}
             />
             <span>{title}</span>
-            <button onClick={() => dispatch(deleteTodo({id}))} className="deleteBtn">
+            <button onClick={() => dispatch(deleteAsyncTodo(id))} className="deleteBtn">
                 &times;
             </button>
         </li>
