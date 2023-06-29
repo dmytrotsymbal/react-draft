@@ -17,13 +17,13 @@ const Todo = (props) => {
         }, 500)
     }, [dispatch])
 
-    const [title, setText] = useState('')
+    const [text, setText] = useState('')
 
     const {status, error} = useSelector((state) => state.todos)
 
     return (
         <div className="Todo">
-            <InputField title={title}  setText={setText} />
+            <InputField title={text}  setText={setText} />
 
             {status === 'loading...' && <h2>Loading...</h2>}
             {error && <h2>An error occured: {error}</h2>}

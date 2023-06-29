@@ -29,11 +29,67 @@ export const deleteAsyncTodo = createAsyncThunk(
                     method: 'DELETE',
                 }
             )
+            console.log(response)
             if (!response.ok) {
                 throw new Error('Can not delete!')
             }
 
             dispatch(deleteTodo({ id }))
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const toggleAsyncTodoComplet = createAsyncThunk(
+    'todos/toggleTodoComplet',
+    async (id, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await fetch(
+                `https://jsonplaceholder.typicode.com/todos/${id}`,
+                {
+                    method: 'PATCH',
+                }
+            )
+            console.log(response)
+            if (!response.ok) {
+                throw new Error('Can not update the state!')
+            }
+
+            dispatch(toggleTodoComplet({ id }))
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const addNewTodo = createAsyncThunk(
+    'todos/addTodo',
+    async (title, { rejectWithValue, dispatch }) => {
+        try {
+            const todo = {
+                userId: 1,
+                title: title,
+                completed: false,
+            }
+
+            const response = await fetch(
+                'https://jsonplaceholder.typicode.com/todos',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(todo),
+                }
+            )
+            console.log(response)
+            if (!response.ok) {
+                throw new Error('Can not add!')
+            }
+
+            const data = await response.json()
+            dispatch(addTodo(data))
         } catch (error) {
             return rejectWithValue(error.message)
         }
@@ -49,12 +105,7 @@ export const todoSlice = createSlice({
     },
     reducers: {
         addTodo: (state, action) => {
-            state.todos.push({
-                id: Date.now(),
-                title: action.payload.title,
-                completed: false,
-            })
-            action.payload = ''
+            state.todos.push(action.payload)
         },
         deleteTodo: (state, action) => {
             state.todos = state.todos.filter(
@@ -88,9 +139,13 @@ export const todoSlice = createSlice({
             state.status = 'failed'
             state.error = action.payload
         },
+        [toggleAsyncTodoComplet.rejected]: (state, action) => {
+            state.status = 'failed'
+            state.error = action.payload
+        },
     },
 })
 
-export const { addTodo, deleteTodo, toggleTodoComplet } = todoSlice.actions
+const { addTodo, deleteTodo, toggleTodoComplet } = todoSlice.actions
 
 export default todoSlice.reducer
