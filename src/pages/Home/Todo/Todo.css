@@ -1,0 +1,28 @@
+.Todo {
+    width: 400px;
+    min-height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: calc(50% - 200px);
+    margin-bottom: 50px;
+}
+
+.TodoListItem {
+    width: 200px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+}
+
+.deleteBtn {
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.todoCheckbox:checked + span {
+    text-decoration: line-through;
+}

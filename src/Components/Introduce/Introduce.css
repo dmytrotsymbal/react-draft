@@ -1,0 +1,56 @@
+.Introduce {
+    text-align: center;
+}
+
+.Introduce-logo {
+    height: 200px;
+    pointer-events: none;
+    position: absolute;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .Introduce-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.animation {
+    background-image: linear-gradient(to bottom, #424b6b, #29324f);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.IntroduceTitle {
+    color: white;
+    font-size: 27px;
+    font-style: oblique;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+}
+.yellow {
+    color: yellow;
+}
+
+.purple {
+    color: purple;
+}
