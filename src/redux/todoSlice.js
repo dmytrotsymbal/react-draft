@@ -41,14 +41,19 @@ export const deleteAsyncTodo = createAsyncThunk(
     }
 )
 
-export const toggleAsyncTodoComplet = createAsyncThunk(
+export const toggleAsyncTodoComplete = createAsyncThunk(
     'todos/toggleTodoComplet',
-    async (id, { rejectWithValue, dispatch }) => {
+    async (id, { rejectWithValue, dispatch, getState }) => {
+        const todo = getState().todos.todos.find((todo) => todo.id === id)
         try {
             const response = await fetch(
                 `https://jsonplaceholder.typicode.com/todos/${id}`,
                 {
                     method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ completed: !todo.completed }),
                 }
             )
             console.log(response)
@@ -84,6 +89,7 @@ export const addNewTodo = createAsyncThunk(
                 }
             )
             console.log(response)
+            console.log(todo)
             if (!response.ok) {
                 throw new Error('Can not add!')
             }
@@ -139,7 +145,7 @@ export const todoSlice = createSlice({
             state.status = 'failed'
             state.error = action.payload
         },
-        [toggleAsyncTodoComplet.rejected]: (state, action) => {
+        [toggleAsyncTodoComplete.rejected]: (state, action) => {
             state.status = 'failed'
             state.error = action.payload
         },
