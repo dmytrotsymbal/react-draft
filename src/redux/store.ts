@@ -12,10 +12,12 @@ import {
 import storage from 'redux-persist/lib/storage'
 import todoReducer from './todoSlice'
 import themeSlice from './themeSlice'
+import filterSlice from './filterSlice'
 
 const rootReducer = combineReducers({
     todos: todoReducer,
     theme: themeSlice,
+    filter: filterSlice,
 })
 
 const persistConfig = {

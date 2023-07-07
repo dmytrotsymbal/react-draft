@@ -8,6 +8,20 @@
         align-items: center;
         justify-content: center;
 
+        .FiltersBlock {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            button {
+                font-size: 13px;
+                border: 0;
+                width: 75px;
+                height: 30px;
+            }
+        }
+
         .InputField {
             padding-top: 15px;
             width: 300px;
