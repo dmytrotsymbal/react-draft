@@ -11,9 +11,11 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import todoReducer from './todoSlice'
+import themeSlice from './themeSlice'
 
 const rootReducer = combineReducers({
     todos: todoReducer,
+    theme: themeSlice,
 })
 
 const persistConfig = {
