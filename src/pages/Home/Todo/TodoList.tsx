@@ -1,9 +1,8 @@
 import TodoListItem from './TodoListItem'
 import { useAppSelector } from 'redux/hooks'
-import { selectTodosByFilter } from 'redux/selectors'
 
 const TodoList = () => {
-    const todos = useAppSelector(selectTodosByFilter)
+    const todos = useAppSelector((state) => state.todos.todos)
     return (
         <>
             <ol className="TodoList">

@@ -14,6 +14,7 @@ const InputField = ({ title, setText }: Props) => {
                 type="text"
                 value={title}
                 onChange={(e) => setText(e.target.value)}
+                placeholder="Enter new todo"
             />
             <button
                 onClick={() => {
