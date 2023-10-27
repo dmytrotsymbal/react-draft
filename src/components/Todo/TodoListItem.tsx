@@ -13,7 +13,10 @@ const TodoListItem = ({ id, title, completed, index }: Props) => {
     const dispatch = useAppDispatch()
 
     return (
-        <li className="TodoListItem" style={{ zIndex: -index }}>
+        <li
+            className={completed ? 'TodoListItem_Completed' : 'TodoListItem'}
+            style={{ zIndex: -index }}
+        >
             <input
                 className="TodoCheckbox"
                 type="checkbox"

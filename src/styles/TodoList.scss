@@ -77,6 +77,87 @@
             align-items: center;
             cursor: pointer;
             background-color: #999;
+            transition: 0.5s;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(227, 227, 227);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .TodoListItem_Completed {
+        position: relative;
+        list-style: none;
+        width: 200px;
+        padding: 10px;
+        background-color: #202024;
+        transition: 0.5s;
+        color: #999;
+        display: flex;
+        justify-content: space-between;
+
+        &::before {
+            color: #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 40px;
+            height: 100%;
+            background: #1b1d1e;
+            transform-origin: right;
+            transform: skewY(45deg);
+            transition: 0.5s;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #35383e;
+            transform-origin: bottom;
+            transform: skewX(45deg);
+            transition: 0.5s;
+        }
+
+        .TodoCheckbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #999;
+            transition: 0.5s;
+        }
+
+        .DeleteBtn {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #999;
+            border-radius: 2px;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #999;
+            transition: 0.5s;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(227, 227, 227);
+                border-radius: 5px;
+            }
+        }
+
+        span {
+            text-decoration: line-through;
         }
     }
 }

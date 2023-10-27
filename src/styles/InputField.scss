@@ -1,0 +1,42 @@
+.InputField {
+    padding-top: 15px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 70px;
+
+    input {
+        width: 200px;
+        height: 30px;
+        font-size: 18px;
+        border: 1px solid #999;
+        border-radius: 5px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-size: 18px;
+        }
+    }
+
+    button {
+        font-size: 18px;
+        height: 30px;
+        border: 1px solid #999;
+        border-radius: 2px;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: #999;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(227, 227, 227);
+            border-radius: 5px;
+        }
+    }
+}

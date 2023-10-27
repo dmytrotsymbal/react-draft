@@ -9,42 +9,6 @@
     border-radius: 5px;
     margin-top: 100px;
 
-    .InputField {
-        padding-top: 15px;
-        width: 300px;
-        display: flex;
-        justify-content: space-around;
-        padding-bottom: 70px;
-
-        input {
-            width: 200px;
-            height: 30px;
-            font-size: 18px;
-
-            &:focus {
-                outline: none;
-            }
-
-            &::placeholder {
-                font-size: 18px;
-            }
-        }
-
-        button {
-            font-size: 18px;
-            border: 0;
-            width: 50px;
-            height: 30px;
-            background-color: transparent;
-
-            &:hover {
-                cursor: pointer;
-                background-color: rgb(227, 227, 227);
-                border-radius: 5px;
-            }
-        }
-    }
-
     .TotalTodo {
         text-align: center;
         color: #5c5d62;
@@ -61,6 +25,11 @@
 
     button {
         color: white;
+    }
+
+    .TotalTodo {
+        text-align: center;
+        color: #999;
     }
 }
 
