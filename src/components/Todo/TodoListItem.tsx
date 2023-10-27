@@ -1,5 +1,6 @@
 import { useAppDispatch } from 'redux/hooks'
 import { deleteTodo, toggleTodoComplet } from 'redux/todoSlice'
+import CloseIcon from '@mui/icons-material/Close'
 
 type Props = {
     id: number
@@ -14,7 +15,7 @@ const TodoListItem = ({ id, title, completed, index }: Props) => {
     return (
         <li className="TodoListItem" style={{ zIndex: -index }}>
             <input
-                className="todoCheckbox"
+                className="TodoCheckbox"
                 type="checkbox"
                 checked={completed}
                 onChange={() => dispatch(toggleTodoComplet(id))}
@@ -22,9 +23,9 @@ const TodoListItem = ({ id, title, completed, index }: Props) => {
             <span>{title}</span>
             <button
                 onClick={() => dispatch(deleteTodo(id))}
-                className="deleteBtn"
+                className="DeleteBtn"
             >
-                &times;
+                <CloseIcon sx={{ width: '13px' }} />
             </button>
         </li>
     )

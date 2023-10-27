@@ -5,9 +5,7 @@ const TotalTodo = (props: Props) => {
     const todos = useAppSelector((state) => state.todos.todos)
     return (
         <>
-            <p style={{ textAlign: 'center', textDecoration: 'underline' }}>
-                Total todo: {todos.length}
-            </p>
+            <h4 className="TotalTodo">Total todo: {todos.length}</h4>
         </>
     )
 }

@@ -8,7 +8,7 @@
         position: relative;
         list-style: none;
         width: 200px;
-        padding: 15px;
+        padding: 10px;
         background-color: #3e3f46;
         transition: 0.5s;
         color: #999;
@@ -56,6 +56,27 @@
 
         &:hover::after {
             background: #86589d;
+        }
+
+        .TodoCheckbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #999;
+            transition: 0.5s;
+        }
+
+        .DeleteBtn {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #999;
+            border-radius: 2px;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: #999;
         }
     }
 }

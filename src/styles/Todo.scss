@@ -14,7 +14,7 @@
         width: 300px;
         display: flex;
         justify-content: space-around;
-        padding-bottom: 150px;
+        padding-bottom: 70px;
 
         input {
             width: 200px;
@@ -44,14 +44,19 @@
             }
         }
     }
+
+    .TotalTodo {
+        text-align: center;
+        color: #5c5d62;
+    }
 }
 
 #light {
-    background-color: rgb(236, 247, 251);
+    background-color: #bdbfca;
 }
 
 #dark {
-    background-color: rgb(3, 71, 108);
+    background-color: #5c5d62;
     color: white;
 
     button {
