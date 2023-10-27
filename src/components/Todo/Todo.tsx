@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Todo.scss'
+import '../../styles/Todo.scss'
 import TodoList from './TodoList'
 import InputField from './InputField'
 import TotalTodo from './TotalTodo'

@@ -1,7 +1,5 @@
-import Header from 'container/Header/Header'
 import CssBaseline from '@mui/material/CssBaseline' //для типу відміни стилів, робить базовий ресет
-import Footer from 'container/Footer/Footer'
-import Home from 'pages/Home/Home'
+import Todo from 'components/Todo/Todo'
 
 type Props = {}
 
@@ -9,9 +7,7 @@ function App(props: Props) {
     return (
         <>
             <CssBaseline />
-            <Header />
-            <Home />
-            <Footer />
+            <Todo />
         </>
     )
 }
