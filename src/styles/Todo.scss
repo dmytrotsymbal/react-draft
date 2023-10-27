@@ -14,6 +14,7 @@
         width: 300px;
         display: flex;
         justify-content: space-around;
+        padding-bottom: 150px;
 
         input {
             width: 200px;
@@ -40,58 +41,6 @@
                 cursor: pointer;
                 background-color: rgb(227, 227, 227);
                 border-radius: 5px;
-            }
-        }
-    }
-
-    .TodoList {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: left;
-        gap: 20px;
-        list-style: decimal;
-
-        .TodoListItem {
-            position: relative;
-
-            input[type='checkbox'] {
-                position: absolute;
-                left: 5px;
-                width: 18px;
-                height: 18px;
-            }
-
-            input::before {
-                content: '';
-                display: inline-block;
-                width: 18px;
-                height: 18px;
-                cursor: pointer;
-            }
-
-            input:checked + span {
-                text-decoration: line-through;
-            }
-
-            span {
-                position: absolute;
-                left: 35px;
-            }
-
-            button {
-                position: absolute;
-                right: 5px;
-                border: 0;
-                font-size: 23px;
-                background-color: transparent;
-
-                &:hover {
-                    cursor: pointer;
-                    background-color: rgb(227, 227, 227);
-                    border-radius: 5px;
-                }
             }
         }
     }
@@ -151,52 +100,6 @@
                 border: 0;
                 width: 50px;
                 height: 30px;
-            }
-        }
-
-        .TodoList {
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: left;
-            gap: 20px;
-            list-style: decimal;
-
-            .TodoListItem {
-                position: relative;
-
-                input[type='checkbox'] {
-                    position: absolute;
-                    left: 5px;
-                    width: 18px;
-                    height: 18px;
-                }
-
-                input::before {
-                    content: '';
-                    display: inline-block;
-                    width: 18px;
-                    height: 18px;
-                    cursor: pointer;
-                }
-
-                input:checked + span {
-                    text-decoration: line-through;
-                }
-
-                span {
-                    position: absolute;
-                    left: 35px;
-                }
-
-                button {
-                    position: absolute;
-                    right: 5px;
-                    border: 0;
-                    font-size: 23px;
-                    background-color: transparent;
-                }
             }
         }
     }

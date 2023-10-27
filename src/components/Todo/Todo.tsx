@@ -15,10 +15,10 @@ const Todo = (props: Props) => {
 
     return (
         <div className="Todo" id={theme}>
-            <ThemeChange />
+            {/* <ThemeChange /> */}
             <InputField title={title} setText={setText} />
             <TodoList />
-            <TotalTodo />
+            {/* <TotalTodo /> */}
         </div>
     )
 }

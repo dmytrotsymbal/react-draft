@@ -5,13 +5,14 @@ type Props = {
     id: number
     title: string
     completed: boolean
+    index: number
 }
 
-const TodoListItem = ({ id, title, completed }: Props) => {
+const TodoListItem = ({ id, title, completed, index }: Props) => {
     const dispatch = useAppDispatch()
 
     return (
-        <li className="TodoListItem" key={id}>
+        <li className="TodoListItem" style={{ zIndex: -index }}>
             <input
                 className="todoCheckbox"
                 type="checkbox"
